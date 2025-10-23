@@ -612,8 +612,8 @@ namespace ParkingSystem
                             if (r.nav == StepNav.Back) { break; }
 
                             lp = (r.text ?? "").Trim();
-                            if (lp.Length < 6 || lp.Length > 10)
-                            { UI.Error("Госномер должен содержать от 6 до 10 символов."); break; }
+                            if (lp.Length < 8 || lp.Length > 9)
+                            { UI.Error("Госномер должен содержать от 8 до 9 символов."); break; }
 
                             var takenBy = service.GetOwnerNameByLicensePlate(lp);
                             if (takenBy != null) { UI.Error($"Этот номер уже принадлежит: {takenBy}"); break; }
@@ -1144,3 +1144,4 @@ namespace ParkingSystem
         }
     }
 }
+
